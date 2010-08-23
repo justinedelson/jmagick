@@ -16,7 +16,7 @@ JAR_FILE = $(LIB_DIR)/jmagick-$(MAJOR).$(MINOR).$(MICRO).jar
 CLEAN_LIST = $(JAR_FILE)
 
 all: dir default-target
-	cd classes; jar cvf $(JAR_FILE) magick
+	cd classes; jar cvfm $(JAR_FILE) ../res/MANIFEST.MF magick; jar uf $(JAR_FILE) -C ../generated-lib libJMagick-$(MAJOR).$(MINOR).$(MICRO).jnilib
 
 include $(MAKE_PATH)/Make.rules
 
